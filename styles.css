@@ -70,9 +70,11 @@ input[type="submit"]:hover {
   display: flex;
   margin-bottom: 1rem;
 }
+
 #due-date {
   margin-right: 3.5rem;
 }
+
 .form-element {
   margin: 1rem 4rem 1rem 0;
 }
