@@ -56,11 +56,19 @@ const createNewTodo = (e) => {
 
   const title = document.getElementById("title").value;
   const description = document.getElementById("description").value;
-  const dueDate = document.getElementById("due-date").value;
+  const dueDateInput = document.getElementById("due-date");
   const priority = document.getElementById("priority").value;
 
   if (!selectedProject) {
     alert("Select a Project Before Adding a Todo");
+    return;
+  }
+
+  const dueDate = new Date(dueDateInput.value);
+  const currentDate = new Date();
+
+  if (dueDate <= currentDate) {
+    alert("Due date must be after the current date");
     return;
   }
 
@@ -71,7 +79,7 @@ const createNewTodo = (e) => {
 
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
-  document.getElementById("due-date").value = "";
+  dueDateInput.value = "";
   document.getElementById("priority").value = "low";
 };
 
